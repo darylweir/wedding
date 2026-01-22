@@ -85,16 +85,17 @@ export default function Home() {
             </h2>
             <div className="bg-rose-50 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-semibold text-rose-800 mb-4">
-                [Venue Name]
+                Logie Country House
               </h3>
-              <p className="text-rose-700 mb-2">[Full Address]</p>
-              <p className="text-rose-700 mb-2">[City, State ZIP]</p>
+              <p className="text-rose-700 mb-2">A96, Pitcaple, Inverurie</p>
+              <p className="text-rose-700 mb-2">Aberdeenshire, AB51 5EE</p>
+              <p className="text-rose-700 mb-2">Scotland</p>
               <div className="mt-6 h-64 bg-rose-200 rounded-lg flex items-center justify-center">
                 <p className="text-rose-600">Map placeholder - Add Google Maps embed or image</p>
               </div>
               <div className="mt-4">
                 <a
-                  href="https://maps.google.com"
+                  href="https://www.logiecountryhouse.co.uk/contact-logie-country-house/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors"
