@@ -11,7 +11,7 @@ export default function VenuePage() {
       </div>
 
       {/* Top Section: Venue Description and Photo */}
-      <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-52 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Title above both columns */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif italic text-white mb-2 text-center md:text-left">
@@ -56,7 +56,7 @@ export default function VenuePage() {
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <iframe
-            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJ6u9HzVBhEgRYSdN5zYbNZw&key=AIzaSyAN4qzjOu_f_FqLmBkGB-B4KcX2wwWtvUw"
+            src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJ6u9HzVBhEgRYSdN5zYbNZw&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`}
             width="100%"
             height="600"
             style={{ border: 0 }}

@@ -1,28 +1,93 @@
+"use client";
+
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
+// Define interface for Member
+interface Member {
+  name: string;
+  role: string;
+  image?: string;
+  description: string;
+}
+
+function PartyMemberCard({ member }: { member: Member }) {
+  const [imageError, setImageError] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
+  return (
+    <div className="text-center h-full">
+      <div 
+        className="relative aspect-[3/4] w-full mb-4 rounded-lg overflow-hidden shadow-lg group cursor-pointer bg-gray-200"
+        onClick={handleToggle}
+      >
+        {!imageError && member.image ? (
+          <Image
+            src={member.image}
+            alt={member.name}
+            fill
+            className="object-cover object-left transition-all duration-300 group-hover:grayscale group-hover:brightness-75"
+            onError={() => {
+              console.error(`Error loading image for ${member.name}:`, member.image);
+              setImageError(true);
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center transition-all duration-300 group-hover:grayscale group-hover:brightness-75">
+            <p className="text-rose-700 text-xs text-center px-2">
+              {member.name}
+            </p>
+          </div>
+        )}
+        
+        {/* Hover overlay with description - works for both */}
+        <div 
+          className={`absolute inset-0 bg-black/70 transition-opacity duration-300 flex items-center justify-center p-4 ${
+            isToggled ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+          }`}
+        >
+          <p className="text-white text-sm sm:text-base text-center leading-relaxed">
+            {member.description}
+          </p>
+        </div>
+      </div>
+      <h3 className="text-white text-lg font-semibold mb-1">
+        {member.name}
+      </h3>
+      <p className="text-white/70 text-sm">
+        {member.role}
+      </p>
+    </div>
+  );
+}
+
 export default function WeddingPartyPage() {
   // Placeholder data for bridal party
   const bridalParty = [
-    { name: "Cristina Chavez", role: "Maid of Honor", image: "/images/wedding-party/bridal-1.jpg", description: "[Placeholder: How you know Cristina]" },
-    { name: "Elisabeth Roman", role: "Bridesmaid / Sister of the Bride", image: "/images/wedding-party/bridal-2.jpg", description: "[Placeholder: How you know Elisabeth]" },
-    { name: "Johana Figueroa", role: "Mother of the Bride", image: "/images/wedding-party/bridal-3.jpg", description: "[Placeholder: How you know Johana]" },
-    { name: "Delia Silva", role: "Bridesmaid", image: "/images/wedding-party/bridal-4.jpg", description: "[Placeholder: How you know Delia]" },
-    { name: "Maiju Pölkki", role: "Bridesmaid", image: "/images/wedding-party/bridal-5.jpg", description: "[Placeholder: How you know Maiju]" },
-    { name: "Jenni Pensasmaa", role: "Bridesmaid", image: "/images/wedding-party/bridal-6.jpg", description: "[Placeholder: How you know Jenni]" },
+    { name: "Cristina Chavez", role: "Maid of Honor", image: "/images/wedding-party/bridal-1.jpg", description: "Tina is Gen's oldest friend. They met as freshmen at the University of Texas at Austin when they both decided to rush KDChi. In 2019, they successfully completed the Drinking Around the World challenge at EPCOT." },
+    { name: "Elisabeth Roman", role: "Bridesmaid / Sister of the Bride", image: "/images/wedding-party/bridal-2.jpg", description: "Leli was born when Gen was four. She's the brave sister: as a kid, she once went back to rescue Gen's doll after their home was broken into but before they knew the burglars were gone." },
+    { name: "Johana Figueroa", role: "Mother of the Bride", image: "/images/wedding-party/bridal-3.jpg", description: "Johana met Gen when she gave birth to her. Originally from Puerto Rico, she now lives in Houston, Texas" },
+    { name: "Delia Silva", role: "Bridesmaid", image: "/images/wedding-party/bridal-4.jpg", description: "Delia and Gen met at RELEX and bonded over their shared experience as latinas in the frozen north. Fun fact: Lorelai and Emily (Delia's cats) are half-siblings to Sam (our cat)." },
+    { name: "Maiju Pölkki", role: "Bridesmaid", image: "/images/wedding-party/bridal-5.jpg", description: "Maiju joined RELEX when Gen was in charge of global onboarding. What started as a work acquaintance quickly became a close friendship. Maiju owns the world's second-cutest dog, Unto." },
+    { name: "Jenni Pensasmaa", role: "Bridesmaid", image: "/images/wedding-party/bridal-6.jpg", description: "Jenni was the first friend Gen made after moving to Helsinki in 2021. They met on Bumble BFF and became actual BFFs. Jenni spent about a decade living in London and has the accent to show for it." },
   ];
 
   // Placeholder data for groom's party
   const groomsParty = [
-    { name: "Bradley Weir", role: "Best Man / Brother of the Groom", image: "/images/wedding-party/groom-1.jpg", description: "[Placeholder: How you know Bradley]" },
-    { name: "Jackie Weir", role: "Mother of the Groom", image: "/images/wedding-party/groom-2.jpg", description: "[Placeholder: How you know Jackie]" },
-    { name: "Paul Weir", role: "Father of the Groom", image: "/images/wedding-party/groom-3.jpg", description: "[Placeholder: How you know Paul]" },
-    { name: "Mark Godley", role: "Groomsman", image: "/images/wedding-party/groom-4.jpg", description: "[Placeholder: How you know Mark]" },
-    { name: "Keith Robertson", role: "Groomsman", image: "/images/wedding-party/groom-5.jpg", description: "[Placeholder: How you know Keith]" },
-    { name: "Thomas McDowall", role: "Groomsman", image: "/images/wedding-party/groom-6.jpg", description: "[Placeholder: How you know Thomas]" },
-    { name: "John Burns", role: "Groomsman", image: "/images/wedding-party/groom-7.jpg", description: "[Placeholder: How you know John]" },
-    { name: "David Godley", role: "Groomsman", image: "/images/wedding-party/groom-8.jpg", description: "[Placeholder: How you know David]" },
+    { name: "Bradley Weir", role: "Best Man / Brother of the Groom", image: "/images/wedding-party/groom-1.jpg", description: "Daryl and Bradley got off to a rough start: Daryl had a poem titled \"It!\" published about how awful his younger brother was. Luckily they bounced back and are now best friends, each serving as the other's best man." },
+    { name: "Jackie Weir", role: "Mother of the Groom", image: "/images/wedding-party/groom-2.jpg", description: "Jackie is the center of the Weir family. She has a heart of gold and a frankly uncanny ability to remember the details of her loved ones' lives. She spends her days enjoying the Spanish sunshine and reading romance novels." },
+    { name: "Paul Weir", role: "Father of the Groom", image: "/images/wedding-party/groom-3.jpg", description: "After finally achieving his dream of escaping Scotland to retire in the sun, Paul has has now been dragged back for this wedding. He's a warm, loving father who's quick with a smile and handy with any tool you care to name. For the international guests, we apologise in advance for his accent." },
+    { name: "Mark Godley", role: "Groomsman", image: "/images/wedding-party/groom-4.jpg", description: "Since they met in school in the year 2000, Mark has essentially become Daryl's second brother, united by a deep love of all things nerdy. He once taught the children of billionaires at a boarding school in Switzerland and currently teaches high school in Singapore.  This may or may not be a cover for his life as an international super-spy." },
+    { name: "David Godley", role: "Groomsman", image: "/images/wedding-party/groom-5.jpg", description: "Another friend of Daryl's for over twenty years, David is also Mark's younger brother. He has watched more anime than anyone realistically should. As far as we know he is not an international super-spy, but maybe he's just hiding it better than Mark." },
+    { name: "Thomas McDowall", role: "Groomsman", image: "/images/wedding-party/groom-6.jpg", description: "Daryl knew Thomas first as David's best friend, but they solidified their own friendship when Thomas joined the group's Dungeons & Dragons table. In a crowded field of candidates, Thomas may be the nerdiest member of the wedding party. His Lord of the Rings knowledge is unmatched (but don't tell Keith we said that)." },
+    { name: "Keith Robertson", role: "Groomsman", image: "/images/wedding-party/groom-7.jpg", description: "Daryl met Keith on the battlefields of Team Fortress 2. They played together for years before finally meeting in person when Keith moved from Edinburgh to Paisley. Luckily, this is not one of those cautionary tales about meeting people online." },
+    { name: "John Burns", role: "Groomsman", image: "/images/wedding-party/groom-8.jpg", description: "John is Daryl's oldest friend and the tallest member of the wedding party. They met in primary school and became close in Ms. Valentine's creative writing program. When they were 18, they nearly missed a flight to New York because they didn't understand you still had to check-in when the flight was delayed." },
   ];
 
   return (
@@ -33,42 +98,20 @@ export default function WeddingPartyPage() {
       </div>
 
       {/* Wedding Party Content Section */}
-      <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-52 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* The Bridal Party */}
           <div className="mb-20">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white mb-12 text-center">
-              The BRIDAL PARTY
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white mb-6 text-center">
+              THE BRIDAL PARTY
             </h2>
+            <p className="text-white/70 text-center mb-12 italic">
+              Hover or tap on the images for a little tidbit about each person.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {bridalParty.map((member, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative aspect-[3/4] w-full mb-4 rounded-lg overflow-hidden shadow-lg group cursor-pointer">
-                    {/* Placeholder for member image - replace with actual image */}
-                    {/* <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-all duration-300 group-hover:grayscale group-hover:brightness-75"
-                    /> */}
-                    <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center transition-all duration-300 group-hover:grayscale group-hover:brightness-75">
-                      <p className="text-rose-700 text-xs text-center px-2">
-                        {member.name}
-                      </p>
-                    </div>
-                    {/* Hover overlay with description */}
-                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                      <p className="text-white text-sm sm:text-base text-center leading-relaxed">
-                        {member.description}
-                      </p>
-                    </div>
-                  </div>
-                  <h3 className="text-white text-lg font-semibold mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/70 text-sm">
-                    {member.role}
-                  </p>
+                <div key={index}>
+                  <PartyMemberCard member={member} />
                 </div>
               ))}
             </div>
@@ -76,72 +119,25 @@ export default function WeddingPartyPage() {
 
           {/* The Groom's Party */}
           <div className="mb-20">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white mb-12 text-center">
-              The GROOM&apos;S PARTY
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif italic text-white mb-6 text-center">
+              THE GROOM&apos;S PARTY
             </h2>
+            <p className="text-white/70 text-center mb-12 italic">
+              Hover or tap on the images for a little tidbit about each person.
+            </p>
             {/* First 6 members in 3-column grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 mb-8">
               {groomsParty.slice(0, 6).map((member, index) => (
-                <div key={index} className="text-center lg:col-span-2">
-                  <div className="relative aspect-[3/4] w-full mb-4 rounded-lg overflow-hidden shadow-lg group cursor-pointer">
-                    {/* Placeholder for member image - replace with actual image */}
-                    {/* <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-all duration-300 group-hover:grayscale group-hover:brightness-75"
-                    /> */}
-                    <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center transition-all duration-300 group-hover:grayscale group-hover:brightness-75">
-                      <p className="text-rose-700 text-xs text-center px-2">
-                        {member.name}
-                      </p>
-                    </div>
-                    {/* Hover overlay with description */}
-                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                      <p className="text-white text-sm sm:text-base text-center leading-relaxed">
-                        {member.description}
-                      </p>
-                    </div>
-                  </div>
-                  <h3 className="text-white text-lg font-semibold mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/70 text-sm">
-                    {member.role}
-                  </p>
+                <div key={index} className="lg:col-span-2">
+                  <PartyMemberCard member={member} />
                 </div>
               ))}
             </div>
             {/* Last 2 members centered in gaps */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
               {groomsParty.slice(6).map((member, index) => (
-                <div key={index + 6} className={`text-center ${index === 0 ? 'lg:col-start-2 lg:col-span-2' : 'lg:col-start-4 lg:col-span-2'}`}>
-                  <div className="relative aspect-[3/4] w-full mb-4 rounded-lg overflow-hidden shadow-lg group cursor-pointer">
-                    {/* Placeholder for member image - replace with actual image */}
-                    {/* <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-all duration-300 group-hover:grayscale group-hover:brightness-75"
-                    /> */}
-                    <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center transition-all duration-300 group-hover:grayscale group-hover:brightness-75">
-                      <p className="text-rose-700 text-xs text-center px-2">
-                        {member.name}
-                      </p>
-                    </div>
-                    {/* Hover overlay with description */}
-                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
-                      <p className="text-white text-sm sm:text-base text-center leading-relaxed">
-                        {member.description}
-                      </p>
-                    </div>
-                  </div>
-                  <h3 className="text-white text-lg font-semibold mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-white/70 text-sm">
-                    {member.role}
-                  </p>
+                <div key={index + 6} className={index === 0 ? 'lg:col-start-2 lg:col-span-2' : 'lg:col-start-4 lg:col-span-2'}>
+                  <PartyMemberCard member={member} />
                 </div>
               ))}
               <div className="hidden lg:block"></div>
