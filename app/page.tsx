@@ -1,8 +1,24 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function Home() {
+  const [scrollIndicatorOpacity, setScrollIndicatorOpacity] = useState(1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const fadeDistance = 100;
+      const opacity = Math.max(0, 1 - scrollY / fadeDistance);
+      setScrollIndicatorOpacity(opacity);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
@@ -21,12 +37,10 @@ export default function Home() {
             {/* Fallback gradient if video doesn't load */}
             <div className="w-full h-full bg-gradient-to-b from-sky-300 via-blue-400 to-cyan-500" />
           </video>
-          {/* Fallback gradient overlay for when video is loading or unavailable */}
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-b from-sky-300/30 via-blue-400/30 to-cyan-500/30" />
         </div>
         
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/10 z-10" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
         
         {/* Header with Navigation */}
         <Header />
@@ -52,7 +66,7 @@ export default function Home() {
           <div className="mt-12">
             <a
               href="/rsvp"
-              className="inline-block px-8 py-4 bg-white/95 text-rose-700 font-semibold text-lg rounded-lg hover:bg-white transition-all shadow-xl hover:shadow-2xl uppercase tracking-wide"
+              className="inline-block px-8 py-4 bg-white/20 backdrop-blur-md text-white font-semibold text-lg rounded-lg border border-white/30 hover:bg-white/40 transition-all shadow-lg hover:shadow-xl uppercase tracking-wide"
             >
               RSVP HERE
             </a>
@@ -60,7 +74,10 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+        <div 
+          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-300"
+          style={{ opacity: scrollIndicatorOpacity }}
+        >
           <a
             href="#our-story"
             className="flex flex-col items-center text-white/80 hover:text-white transition-colors group"
@@ -70,7 +87,7 @@ export default function Home() {
               Scroll
             </span>
             <svg
-              className="w-8 h-8"
+              className="w-8 h-8 animate-bounce"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

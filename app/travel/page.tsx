@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "@/components/Header";
+import HeaderSpacer from "@/components/HeaderSpacer";
 import Footer from "@/components/Footer";
 
 export default function TravelPage() {
@@ -23,10 +24,11 @@ export default function TravelPage() {
       {/* Header with Navigation */}
       <div className="relative">
         <Header />
+        <HeaderSpacer />
       </div>
 
       {/* Travel Content Section */}
-      <section className="pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-serif italic text-white mb-12 text-center">
             Travel & Accommodation

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import HeaderSpacer from "@/components/HeaderSpacer";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 
@@ -8,10 +9,11 @@ export default function VenuePage() {
       {/* Header with Navigation */}
       <div className="relative">
         <Header />
+        <HeaderSpacer />
       </div>
 
       {/* Top Section: Venue Description and Photo */}
-      <section className="pt-52 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Title above both columns */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif italic text-white mb-2 text-center md:text-left">

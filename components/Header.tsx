@@ -4,12 +4,12 @@ import Link from "next/link";
 export default function Header() {
   const navItems = [
     { label: "HOME", href: "/" },
-    { label: "GALLERY", href: "/gallery" },
     { label: "VENUE", href: "/venue" },
     { label: "SCHEDULE", href: "/schedule" },
     { label: "TRAVEL", href: "/travel" },
     { label: "WEDDING PARTY", href: "/wedding-party" },
     { label: "FAQ", href: "/faq" },
+    { label: "GALLERY", href: "/gallery" },
   ];
 
   return (
