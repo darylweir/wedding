@@ -10,6 +10,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+  
+  /* Dark blue/grey colors for sections */
+  --color-dark-blue: #1a2332;
+  --color-dark-blue-light: #2a3441;
+  --color-dark-blue-dark: #0f1419;
   
   /* Wedding theme colors */
   --color-rose-50: #fff1f2;
@@ -44,6 +50,10 @@
   --color-sage-700: #3d4f3d;
   --color-sage-800: #344134;
   --color-sage-900: #2d362d;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

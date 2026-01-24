@@ -1,14 +1,28 @@
+"use client";
+
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="w-full bg-rose-50 py-12 mt-20">
+    <footer className="w-full bg-[#1a2332] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <p className="text-rose-700 text-sm">
-            We can&apos;t wait to celebrate with you!
-          </p>
-          <p className="text-rose-600 text-xs mt-2">
-            For questions, please contact us
-          </p>
+        <div className="text-center space-y-4">
+          <button
+            onClick={scrollToTop}
+            className="text-white uppercase tracking-wider text-sm hover:text-rose-200 transition-colors"
+          >
+            BACK TO TOP
+          </button>
+          <div>
+            <p className="text-white/90 text-sm">
+              We can&apos;t wait to celebrate with you!
+            </p>
+            <p className="text-white/70 text-xs mt-2">
+              For questions, please contact us
+            </p>
+          </div>
         </div>
       </div>
     </footer>
