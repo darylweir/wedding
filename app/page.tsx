@@ -110,7 +110,6 @@ export default function Home() {
             {/* Portrait Image - Left */}
             <div className="order-2 md:order-1">
               <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden shadow-2xl">
-                {/* Placeholder for portrait image - replace with actual image */}
                 <Image
                   src="/images/couple-portrait.jpg"
                   alt="Daryl and Genesis"
@@ -127,13 +126,16 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Daryl and Genesis met in the early spring of 2023, both having moved away from their home countries and lived in Helsinki. Their initial interactions were marked by shared interests and deep conversations.
+                  Though Daryl and Genesis both moved away from their home countries and lived in Helsinki for years, they didn&apos;t cross paths with one another until the spring of 2023.
                 </p>
                 <p>
-                  Coming together after tragedy and finding peace, they discovered a mutual love for fantasy novels and meaningful connections. After speaking on the phone for 4 hours and a few tears later, they were hooked.
+                  They had both taken a bumpy road to get to that point, but in each other they both found exactly what they were looking for: peace, companionship, and a place to heal. 
                 </p>
                 <p>
-                  They chose April 6th as their anniversary because that was the date of the first message Daryl sent Genesis on the dating app—a moment that would change both their lives forever.
+                  They traded messages for a couple of weeks, and set a first date to meet in person. Unfortunately, at the last minute Gen fell sick and they had to pivot to a video call. Despite that, there was an instant connection and before they knew it four hours, a lot of laughs, and even a few tears had passed. 
+                </p>
+                <p>
+                  The next week they finally met in person for dinner, and both suspected they had found something special. A comedy club visit followed, and then another date, and another, and another... They never had the "what are we?" conversation. Instead, one night after meeting Gen's friend Jenni for the first time, Daryl simply asked "so, how did I do with the whole meet-the-boyfriend thing?" And that was that. Lacking an "official" date, they picked April 6th as their anniversary since that was the date of the first message Daryl sent to Gen.
                 </p>
               </div>
             </div>
@@ -149,13 +151,13 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
-                  For centuries, the kingdom of Iadian has been protected by the god known as the Raven. The Raven&apos;s will is made manifest through the Raven&apos;s Lance, and the Lance&apos;s power is absolute—requiring only a blood sacrifice.
+                  One of the first things Daryl and Genesis bonded over was their shared love of fantasy novels. Before their first date, they agreed to start reading the same book and discuss the first few chapters together. Daryl suggested a few books from his TBR pile, and Gen chose The Raven Tower by Ann Leckie.
                 </p>
                 <p>
-                  But the power of the Raven is weakening. A usurper has claimed the throne. Invaders are attacking the borders. And the Raven&apos;s Tower, the source of the Lance&apos;s power, is failing.
+                  In the end, they barely discussed the book on the first date, but the conversation roamed from one topic to another, touching on lots of other books that they each loved.
                 </p>
                 <p>
-                  A warrior named Eolo has discovered a secret within the Raven&apos;s Tower—a secret that could change the fate of the kingdom forever.
+                  They eventually finished the book. Daryl liked it (he gave it 4/5 on Goodreads); Gen secretly wasn't impressed but didn't admit that until much later. Despite the mismatch, it started a habit of sharing the things they loved with each other that still runs strong today.
                 </p>
               </div>
             </div>
@@ -163,25 +165,48 @@ export default function Home() {
             {/* Book Cover - Right */}
             <div className="order-1 md:order-2">
               <div className="relative aspect-[2/3] w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-2xl">
-                {/* Placeholder for book cover - replace with actual image */}
-                {/* <Image
+                <Image
                   src="/images/raven-tower-cover.jpg"
                   alt="The Raven Tower by Ann Leckie"
                   fill
                   className="object-cover"
-                /> */}
-                <div className="w-full h-full bg-gradient-to-br from-amber-900 via-yellow-900 to-amber-800 flex flex-col items-center justify-center p-6 border-4 border-amber-700">
-                  <div className="text-center">
-                    <h3 className="text-white text-2xl font-serif mb-2">THE RAVEN TOWER</h3>
-                    <p className="text-amber-200 text-sm">ANN LECKIE</p>
-                  </div>
-                  <div className="mt-6 w-24 h-24 bg-amber-700 rounded-full flex items-center justify-center">
-                    <svg className="w-16 h-16 text-amber-900" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                    </svg>
-                  </div>
-                  <p className="text-amber-200 text-xs mt-4 text-center">Book Cover Placeholder</p>
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* New Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a2332]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Placeholder Image - Left */}
+            <div className="order-2 md:order-1">
+              <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden shadow-2xl">
+                <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center">
+                  <p className="text-rose-700 text-sm text-center px-4">
+                    Placeholder Image
+                  </p>
                 </div>
+              </div>
+            </div>
+            
+            {/* Dummy Text - Right */}
+            <div className="order-1 md:order-2">
+              <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
+                Section Title
+              </h2>
+              <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </p>
+                <p>
+                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                </p>
               </div>
             </div>
           </div>

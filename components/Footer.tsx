@@ -11,16 +11,16 @@ export default function Footer() {
         <div className="text-center space-y-4">
           <button
             onClick={scrollToTop}
-            className="text-white uppercase tracking-wider text-sm hover:text-rose-200 transition-colors"
+            className="text-white uppercase tracking-wider text-sm hover:text-blue-900 transition-colors"
           >
             BACK TO TOP
           </button>
           <div>
             <p className="text-white/90 text-sm">
-              We can&apos;t wait to celebrate with you!
+              Made from girders in Helsinki.
             </p>
-            <p className="text-white/70 text-xs mt-2">
-              For questions, please contact us
+            <p className="text-white/70 text-sm">
+              &copy; {new Date().getFullYear()} Daryl & his robot assistant
             </p>
           </div>
         </div>

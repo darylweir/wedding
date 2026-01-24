@@ -20,7 +20,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Our Wedding",
-  description: "Join us for our special day",
+  description: "Join Daryl and Genesis on their special day",
 };
 
 export default function RootLayout({

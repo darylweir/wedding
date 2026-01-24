@@ -69,17 +69,15 @@ function PartyMemberCard({ member }: { member: Member }) {
 }
 
 export default function WeddingPartyPage() {
-  // Placeholder data for bridal party
   const bridalParty = [
     { name: "Cristina Chavez", role: "Maid of Honor", image: "/images/wedding-party/bridal-1.jpg", description: "Tina is Gen's oldest friend. They met as freshmen at the University of Texas at Austin when they both decided to rush KDChi. In 2019, they successfully completed the Drinking Around the World challenge at EPCOT." },
     { name: "Elisabeth Roman", role: "Bridesmaid / Sister of the Bride", image: "/images/wedding-party/bridal-2.jpg", description: "Leli was born when Gen was four. She's the brave sister: as a kid, she once went back to rescue Gen's doll after their home was broken into but before they knew the burglars were gone." },
-    { name: "Johana Figueroa", role: "Mother of the Bride", image: "/images/wedding-party/bridal-3.jpg", description: "Johana met Gen when she gave birth to her. Originally from Puerto Rico, she now lives in Houston, Texas" },
+    { name: "Johana Figueroa", role: "Mother of the Bride", image: "/images/wedding-party/bridal-3.jpg", description: "Johana met Gen when she gave birth to her. Originally from Puerto Rico, she now lives in Houston, Texas. When she's not busy being a mom and grandma, she's often found in the kitchen trying out new recipes or cooking up Puerto Rican classics." },
     { name: "Delia Silva", role: "Bridesmaid", image: "/images/wedding-party/bridal-4.jpg", description: "Delia and Gen met at RELEX and bonded over their shared experience as latinas in the frozen north. Fun fact: Lorelai and Emily (Delia's cats) are half-siblings to Sam (our cat)." },
     { name: "Maiju Pölkki", role: "Bridesmaid", image: "/images/wedding-party/bridal-5.jpg", description: "Maiju joined RELEX when Gen was in charge of global onboarding. What started as a work acquaintance quickly became a close friendship. Maiju owns the world's second-cutest dog, Unto." },
     { name: "Jenni Pensasmaa", role: "Bridesmaid", image: "/images/wedding-party/bridal-6.jpg", description: "Jenni was the first friend Gen made after moving to Helsinki in 2021. They met on Bumble BFF and became actual BFFs. Jenni spent about a decade living in London and has the accent to show for it." },
   ];
 
-  // Placeholder data for groom's party
   const groomsParty = [
     { name: "Bradley Weir", role: "Best Man / Brother of the Groom", image: "/images/wedding-party/groom-1.jpg", description: "Daryl and Bradley got off to a rough start: Daryl had a poem titled \"It!\" published about how awful his younger brother was. Luckily they bounced back and are now best friends, each serving as the other's best man." },
     { name: "Jackie Weir", role: "Mother of the Groom", image: "/images/wedding-party/groom-2.jpg", description: "Jackie is the center of the Weir family. She has a heart of gold and a frankly uncanny ability to remember the details of her loved ones' lives. She spends her days enjoying the Spanish sunshine and reading romance novels." },
