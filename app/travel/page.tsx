@@ -145,19 +145,11 @@ export default function TravelPage() {
                 <div className="bg-[#1a2332] rounded p-4 my-4">
                   <p className="text-white font-semibold mb-2">⚠️ Important Navigation Warning</p>
                   <p>
-                    The postcode <strong>AB51 5EE</strong> does not work reliably with Google Maps or satnav systems—it may take you past the rear drive instead of to the house. For accurate directions, we recommend using the What3Words locations or watching the video directions linked below.
+                    In our experience, typing "Logie Country House" into Google Maps is pretty reliable, but the venue have informed us that using the postcode <strong>AB51 5EE</strong> does not work reliably with some satnav systems — it may take you past the rear drive instead of to the house. For accurate directions, we recommend using Google Maps and/or watching the video directions linked below.
                   </p>
                 </div>
-                <div>
-                  <h3 className="text-white font-semibold mb-2">What3Words Locations</h3>
-                  <ul className="list-disc list-inside space-y-1 ml-2">
-                    <li>House: <code className="bg-[#1a2332] px-2 py-1 rounded text-sm">///geologist.requiring.bravery</code></li>
-                    <li>Front driveway: <code className="bg-[#1a2332] px-2 py-1 rounded text-sm">///debut.reconnect.frown</code></li>
-                    <li>Rear driveway: <code className="bg-[#1a2332] px-2 py-1 rounded text-sm">///status.value.crumb</code></li>
-                  </ul>
-                </div>
                 <p>
-                  For detailed video directions from different locations (Huntly, Inverurie, and the rear drive), please visit the{" "}
+                  For detailed video directions from different locations, please visit the{" "}
                   <a
                     href="https://www.logiecountryhouse.co.uk/contact-logie-country-house/"
                     target="_blank"
@@ -167,6 +159,13 @@ export default function TravelPage() {
                     Logie Country House contact page
                   </a>
                   , which includes helpful video guides for finding the venue.
+                </p>
+                <h3 className="text-white font-semibold mb-2">Parking</h3>
+                <p>
+                  Parking is available behind the ballroom, and is sign-posted on the way in. Overnight guests can bring their cars to the house to drop off their bags, but please make sure to move them to the car park afterwards.
+                </p>
+                <p>
+                  There is parking space and electrical hook-up for two camper vans on site. If you're thinking of bringing one, please let us know in advance.
                 </p>
               </div>
             </div>

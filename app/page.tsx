@@ -7,22 +7,45 @@ import Image from "next/image";
 
 export default function Home() {
   const [scrollIndicatorOpacity, setScrollIndicatorOpacity] = useState(1);
+  // Start with false to prevent flicker, will be set correctly on mount
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const checkScrollPosition = () => {
       const scrollY = window.scrollY;
       const fadeDistance = 100;
       const opacity = Math.max(0, 1 - scrollY / fadeDistance);
       setScrollIndicatorOpacity(opacity);
+      
+      // Hide scroll indicator completely once user has scrolled past hero section
+      const ourStorySection = document.getElementById("our-story");
+      if (ourStorySection) {
+        const sectionTop = ourStorySection.offsetTop;
+        const viewportHeight = window.innerHeight;
+        // Hide when we're past the hero section (when our-story section is in view)
+        setShowScrollIndicator(scrollY < sectionTop - viewportHeight / 2);
+      } else {
+        // If section not found yet, show indicator if at top of page
+        setShowScrollIndicator(scrollY < 100);
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Check immediately on mount
+    checkScrollPosition();
+    
+    // Also check after a brief delay to catch any layout shifts
+    const timeout = setTimeout(checkScrollPosition, 100);
+
+    window.addEventListener("scroll", checkScrollPosition);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("scroll", checkScrollPosition);
+    };
   }, []);
   return (
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -46,7 +69,7 @@ export default function Home() {
         <Header />
         
         {/* Hero Content */}
-        <div className="relative z-20 w-full text-center px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+        <div className="relative z-20 w-full text-center px-4 sm:px-6 lg:px-8 pt-52 pb-20">
           {/* Names in script font */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-serif italic text-white mb-4 drop-shadow-lg">
             Daryl & Genesis
@@ -74,10 +97,11 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div 
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-300"
-          style={{ opacity: scrollIndicatorOpacity }}
-        >
+        {showScrollIndicator && (
+          <div 
+            className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-300"
+            style={{ opacity: scrollIndicatorOpacity }}
+          >
           <a
             href="#our-story"
             className="flex flex-col items-center text-white/80 hover:text-white transition-colors group"
@@ -101,6 +125,7 @@ export default function Home() {
             </svg>
           </a>
         </div>
+        )}
       </section>
 
       {/* Our Story Section */}

@@ -10,7 +10,7 @@ export default function HeaderSpacer() {
       const header = document.querySelector("header");
       if (header) {
         const measuredHeight = header.offsetHeight;
-        setHeight(measuredHeight-30);
+        setHeight(measuredHeight);
       }
     };
 

@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="text-center space-y-4">
           <button
             onClick={scrollToTop}
-            className="text-white uppercase tracking-wider text-sm hover:text-blue-900 transition-colors"
+            className="text-white uppercase tracking-wider text-sm hover:text-blue-300 transition-colors"
           >
             BACK TO TOP
           </button>

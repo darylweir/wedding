@@ -32,7 +32,7 @@ export default function Header() {
                 <Component
                   key={item.label}
                   {...props}
-                  className="text-white text-sm sm:text-base font-medium hover:text-blue-900 transition-colors uppercase tracking-wide"
+                  className="text-white text-sm sm:text-base font-medium hover:text-blue-300 transition-colors uppercase tracking-wide"
                 >
                   {item.label}
                 </Component>
