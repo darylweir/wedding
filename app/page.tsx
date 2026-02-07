@@ -174,7 +174,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Fantasy Text - Left */}
-            <div className="order-2 md:order-1">
+            <div className="order-1">
             <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
                 Early Connections
               </h2>
@@ -192,7 +192,7 @@ export default function Home() {
             </div>
             
             {/* Book Cover - Right */}
-            <div className="order-1 md:order-2">
+            <div className="order-2">
               <div className="relative aspect-[2/3] w-full max-w-xs mx-auto rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src="/images/raven-tower-cover.jpg"
