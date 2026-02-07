@@ -19,8 +19,8 @@ const scheduleData: { date: string; events: Event[] }[] = [
       },
       {
         time: "7:30 PM",
-        title: "Salsa Lesson",
-        description: "Salsa dancing is an important part of Puerto Rican culture, and will feature in our reception. If you want to practice your steps beforehand, join us in the ballroom for a basic introduction to salsa.",
+        title: "Group Activity",
+        description: "TBD. We have some ideas but they're staying secret for now.",
       },
       {
         time: "After dinner 'til late",
@@ -45,7 +45,7 @@ const scheduleData: { date: string; events: Event[] }[] = [
       {
         time: "2:00 PM",
         title: "Drinks reception",
-        description: "Celebrate with drinks and canapes in the drawing room while we take photos.",
+        description: "Celebrate with drinks, canapes, and close-up magic in the drawing room while we go off to take photos.",
       },
       {
         time: "4:00 PM",
