@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/ImageCarousel";
 import Image from "next/image";
 
 export default function Home() {
@@ -147,7 +148,7 @@ export default function Home() {
             {/* Story Text - Right */}
             <div className="order-1 md:order-2">
               <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
-                OUR STORY
+                Our Story
               </h2>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
@@ -174,6 +175,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Fantasy Text - Left */}
             <div className="order-2 md:order-1">
+            <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
+                Early Connections
+              </h2>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
                   One of the first things Daryl and Genesis bonded over was their shared love of fantasy novels. Before their first date, they agreed to start reading the same book and discuss the first few chapters together. Daryl suggested a few books from his TBR pile, and Gen chose The Raven Tower by Ann Leckie.
@@ -202,35 +206,116 @@ export default function Home() {
         </div>
       </section>
 
-      {/* New Section */}
+      {/* Growing Love Section - full-width text + carousel */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a2332]">
+        <div className="max-w-6xl mx-auto mb-12">
+          <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
+            Growing Love
+          </h2>
+          <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
+            <p>
+              After that, the milestones came thick and fast. Meeting each other's friends, introducing Gen's cat to Daryl's dog, Gen's first ceilidh, travelling to Scotland, Stockholm, Copenhagen, Houston, and Paris, moving in together at Daryl's place, and then buying a house in the suburbs.
+              With each of these moments, their love grew stronger and deeper. They each made the other's life better in ways small and large.
+            </p>
+          </div>
+        </div>
+        <div className="relative left-1/2 w-screen -translate-x-1/2">
+          <ImageCarousel
+            images={[
+              { src: "/images/carousel/carousel-1.jpg", alt: "Growing love 1" },
+              { src: "/images/carousel/carousel-2.jpg", alt: "Growing love 2", orientation: "landscape" },
+              { src: "/images/carousel/carousel-3.jpg", alt: "Growing love 3" },
+              { src: "/images/carousel/carousel-4.jpg", alt: "Growing love 4" },
+              { src: "/images/carousel/carousel-5.jpg", alt: "Growing love 5" },
+              { src: "/images/carousel/carousel-6.jpg", alt: "Growing love 6" },
+              { src: "/images/carousel/carousel-7.jpg", alt: "Growing love 7" },
+              { src: "/images/carousel/carousel-8.jpg", alt: "Growing love 8" },
+              { src: "/images/carousel/carousel-9.jpg", alt: "Growing love 9" },
+              { src: "/images/carousel/carousel-10.jpg", alt: "Growing love 10" },
+              { src: "/images/carousel/carousel-11.jpg", alt: "Growing love 11" },
+              { src: "/images/carousel/carousel-12.jpg", alt: "Growing love 12", orientation: "landscape" },
+              { src: "/images/carousel/carousel-13.jpg", alt: "Growing love 13" },
+              { src: "/images/carousel/carousel-14.jpg", alt: "Growing love 14" },
+              { src: "/images/carousel/carousel-15.jpg", alt: "Growing love 15", orientation: "landscape" },
+              { src: "/images/carousel/carousel-16.jpg", alt: "Growing love 16", orientation: "landscape" },
+              { src: "/images/carousel/carousel-17.jpg", alt: "Growing love 17" },
+              { src: "/images/carousel/carousel-18.jpg", alt: "Growing love 18" },
+              { src: "/images/carousel/carousel-19.jpg", alt: "Growing love 19" },
+              { src: "/images/carousel/carousel-20.jpg", alt: "Growing love 20" },
+              { src: "/images/carousel/carousel-21.jpg", alt: "Growing love 21" },
+            ]}
+            intervalMs={4500}
+          />
+        </div>
+      </section>
+
+      {/* The Proposal Section - image right */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a2332]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Placeholder Image - Left */}
-            <div className="order-2 md:order-1">
-              <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-rose-300 via-pink-300 to-rose-400 flex items-center justify-center">
-                  <p className="text-rose-700 text-sm text-center px-4">
-                    Placeholder Image
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Dummy Text - Right */}
-            <div className="order-1 md:order-2">
+            {/* Proposal Text - Left */}
+            <div className="order-1">
               <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
-                Section Title
+                The Proposal
               </h2>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  Daryl had a plan. He was going to propose to Gen on a trip to Paris in May of 2025. However, a romantic weekend in Paris was not exactly subtle, and Gen began to suspect what was going on.
                 </p>
                 <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  To try and maintain some sense of surprise, he decided to change his plans: he would propose on their second anniversary, April 6th, 2025. After a dinner at the new Brazilian steakhouse, Gaucho, they would take a walk down by the harbour in the center of Helsinki, and there he'd pop the question.
                 </p>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                  As they were waiting for the cab to the city, Gen was struck by an intrusive thought. She reached out and patted Daryl's jacket pocket, and felt the ring box. A little chagrined, Daryl still stuck to the original plan, and made Gen wait through dinner to see the ring and hear the all-important question. 
+                </p>
+                <p>
+                  On Rakkauden Silta, the Bridge of Love, right by the apartment Gen lived in when they first met, Daryl got down on one knee and proposed. Despite the lack of surprise, Gen said yes without hesitation.
+                </p>
+              </div>
+            </div>
+
+            {/* Proposal Image - Right */}
+            <div className="order-2">
+              <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/proposal.jpg"
+                  alt="The proposal"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Road to the Wedding Section - image left */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#1a2332]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Image - Left */}
+            <div className="order-2 md:order-1">
+              <div className="relative aspect-[3/4] w-full rounded-lg overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/baby-on-the-way.jpg"
+                  alt="Gen and Daryl in the hallway of their house, holding a positive pregnancy test"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Text - Right */}
+            <div className="order-1 md:order-2">
+              <h2 className="text-5xl sm:text-6xl font-serif italic text-white mb-6">
+                Road to the Wedding
+              </h2>
+              <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
+                <p>
+                  They planned a relatively long engagement, setting the date for mid 2027. That long gap left plenty of time for other surprises. In September of 2025, just a few weeks after their engagement photoshoot, they found out Gen was pregnant.
+                </p>
+                <p>
+                  Now they find themselves planning a wedding and prepping a nursery for the arrival of their baby, due in May 2026.
                 </p>
               </div>
             </div>
