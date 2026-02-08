@@ -145,7 +145,7 @@ export default function TravelPage() {
                 <div className="bg-[#1a2332] rounded p-4 my-4">
                   <p className="text-white font-semibold mb-2">⚠️ Important Navigation Warning</p>
                   <p>
-                    In our experience, typing "Logie Country House" into Google Maps is pretty reliable, but the venue have informed us that using the postcode <strong>AB51 5EE</strong> does not work reliably with some satnav systems — it may take you past the rear drive instead of to the house. For accurate directions, we recommend using Google Maps and/or watching the video directions linked below.
+                    In our experience, typing &quot;Logie Country House&quot; into Google Maps is pretty reliable, but the venue have informed us that using the postcode <strong>AB51 5EE</strong> does not work reliably with some satnav systems — it may take you past the rear drive instead of to the house. For accurate directions, we recommend using Google Maps and/or watching the video directions linked below.
                   </p>
                 </div>
                 <p>
@@ -165,7 +165,7 @@ export default function TravelPage() {
                   Parking is available behind the ballroom, and is sign-posted on the way in. Overnight guests can bring their cars to the house to drop off their bags, but please make sure to move them to the car park afterwards.
                 </p>
                 <p>
-                  There is parking space and electrical hook-up for two camper vans on site. If you're thinking of bringing one, please let us know in advance.
+                  There is parking space and electrical hook-up for two camper vans on site. If you&apos;re thinking of bringing one, please let us know in advance.
                 </p>
               </div>
             </div>
@@ -208,7 +208,7 @@ export default function TravelPage() {
                   The closest train stations to Logie Country House are <strong>Inverurie</strong> and <strong>Insch</strong>, both of which are less than <strong>15 minutes</strong> away by taxi from the venue.
                 </p>
                 <p>
-                  Guests can check a list of local taxi firms on the{" "}
+                  To get from the train station to their accommodation or to Logie itself, guests can check a list of local taxi firms on the{" "}
                   <a
                     href="https://www.logiecountryhouse.co.uk/aberdeenshire-wedding-suppliers/wedding-transport/"
                     target="_blank"
@@ -260,10 +260,7 @@ export default function TravelPage() {
                   Logie House has a number of bedrooms, but not enough to house all of our guests. These bedrooms will largely be reserved for the wedding party. However, there is plenty of nearby accommodation for our other guests.
                 </p>
                 <p>
-                  The closest hotels to our wedding venue are the newly refurbished <strong>Station Hotel in Insch</strong> and the beautifully located <strong>Pittodrie House Hotel in Chapel of Garioch</strong>. There are lots of nearby Airbnbs too. Inverurie is the closest town and has a number of hotels, B&Bs and guest houses. Many of the local hotels offer a discount for Logie Country House guests. Just ask when you contact them.
-                </p>
-                <p>
-                  There are serviced apartments slightly further away in Aberdeen too.
+                  The closest hotels to our wedding venue are the <a href="https://www.thestationhotelinsch.co.uk/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Station Hotel</a> in Insch and <a href="https://www.macdonaldhotels.co.uk/pittodrie-house" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">Pittodrie House Hotel</a> in Chapel of Garioch. There are lots of nearby AirBnBs too. Inverurie is the closest town and has a number of hotels, B&Bs, and guest houses. Many of the local hotels offer a discount for Logie Country House guests. Just ask when you contact them.
                 </p>
                 <p>
                   For a comprehensive list of recommended accommodation options, please visit the{" "}

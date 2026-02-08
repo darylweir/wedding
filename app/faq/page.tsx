@@ -40,7 +40,7 @@ export default function FAQPage() {
             Yes, children are welcome to join us in celebrating our wedding. Just make sure to include them in the RSVP.
           </p>
           <p className="mt-4">
-            No on-site childcare will be organised during the event. We kindly ask that parents or guardians escort children out of the ceremony or reception if they become fussy or disruptive, so everyone can enjoy the moment. There's a play area on the grounds of the house for them to enjoy.
+            No on-site childcare will be organised during the event. We kindly ask that parents or guardians escort children out of the ceremony or reception if they become fussy or disruptive, so everyone can enjoy the moment. There&apos;s a play area on the grounds of the house for them to enjoy.
           </p>
           <p className="mt-4">
             Please note: the pool area at Logie is not monitored by a lifeguard, so please keep an eye on your children.
@@ -51,14 +51,14 @@ export default function FAQPage() {
     {
       number: "02",
       question: "Can I bring a plus-one?",
-      answer: "This will be indicated on your RSVP form. If you haven't been offered a plus-one and would like one, please send us an email.",
+      answer: "This will be indicated on your RSVP form. If you haven&apos;t been offered a plus-one and would like one, please send us an email.",
     },
     {
       number: "03",
-      question: "I'm travelling from abroad, do I need a visa to enter the UK?",
+      question: "I&apos;m travelling from abroad, do I need a visa to enter the UK?",
       answer: (
         <>
-          No, but if you're not a UK citizen you will need a{" "}
+          No, but if you&apos;re not a UK citizen you will need a{" "}
           <a
             href="https://www.gov.uk/eta"
             target="_blank"
@@ -78,22 +78,22 @@ export default function FAQPage() {
     },
     {
       number: "05",
-      question: "What's the dress code?",
+      question: "What&apos;s the dress code?",
       answer: (
         <>
           <ul className="list-disc list-inside space-y-2">
-            <li>For Friday's welcome dinner, smart casual.</li>
-            <li>For Saturday's events, cocktail. Kilts, fascinators, and all the usual Scottish wedding classics are encouraged.</li>
-            <li>For Sunday, just don't be naked.</li>
+            <li>For Friday&apos;s welcome dinner, smart casual.</li>
+            <li>For Saturday&apos;s events, cocktail. Kilts, fascinators, and all the usual Scottish wedding classics are encouraged.</li>
+            <li>For Sunday, just don&apos;t be naked.</li>
           </ul>
-          <p className="mt-4">No white dresses on any day please. If you'd like to use the pool and/or hot tub during the weekend, please wear a swimsuit.</p>
+          <p className="mt-4">No white dresses on any day please. If you&apos;d like to use the pool and/or hot tub during the weekend, please wear a swimsuit.</p>
         </>
       ),
     },
     {
       number: "06",
       question: "Will events run on the posted schedule?",
-      answer: "Yes. Our amazing wedding coordinator Gillian will do everything in her power to keep us on schedule. If you arrive late to the ceremony, we respectfully ask you to wait until it's over before joining us. We don't mind late joiners for other events during the weekend.",
+      answer: "Yes. Our amazing wedding coordinator Gillian will do everything in her power to keep us on schedule. If you arrive late to the ceremony, we respectfully ask you to wait until it&apos;s over before joining us. We don&apos;t mind late joiners for other events during the weekend.",
     },
     {
       number: "07",
@@ -102,7 +102,7 @@ export default function FAQPage() {
     },
     {
       number: "08",
-      question: "What's the food and drink situation?",
+      question: "What&apos;s the food and drink situation?",
       answer: (
         <>
           <p>
@@ -112,7 +112,7 @@ export default function FAQPage() {
             On Saturday, some drinks will be provided between the ceremony and reception, and wine will be served with dinner. There will be a cash bar at the reception.
           </p>
           <p className="mt-4">
-            On Friday and Sunday, we'll have some drinks available but you're more than welcome to bring your own.
+            On Friday and Sunday, we&apos;ll have some drinks available but you&apos;re more than welcome to bring your own.
           </p>
           <p className="mt-4">
             Please inform us of any allergies or dietary restrictions as part of your RSVP.

@@ -161,7 +161,7 @@ export default function Home() {
                   They traded messages for a couple of weeks, and set a first date to meet in person. Unfortunately, at the last minute Gen fell sick and they had to pivot to a video call. Despite that, there was an instant connection and before they knew it four hours, a lot of laughs, and even a few tears had passed. 
                 </p>
                 <p>
-                  The next week they finally met in person for dinner, and both suspected they had found something special. A comedy club visit followed, and then another date, and another, and another... They never had the "what are we?" conversation. Instead, one night after meeting Gen's friend Jenni for the first time, Daryl simply asked "so, how did I do with the whole meet-the-boyfriend thing?" And that was that. Lacking an "official" date, they picked April 6th as their anniversary since that was the date of the first message Daryl sent to Gen.
+                  The next week they finally met in person for dinner, and both suspected they had found something special. A comedy club visit followed, and then another date, and another, and another... They never had the &quot;what are we?&quot; conversation. Instead, one night after meeting Gen&apos;s friend Jenni for the first time, Daryl simply asked &quot;so, how did I do with the whole meet-the-boyfriend thing?&quot; And that was that. Lacking an &quot;official&quot; date, they picked April 6th as their anniversary since that was the date of the first message Daryl sent to Gen.
                 </p>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function Home() {
                   In the end, they barely discussed the book on the first date, but the conversation roamed from one topic to another, touching on lots of other books that they each loved.
                 </p>
                 <p>
-                  They eventually finished the book. Daryl liked it (he gave it 4/5 on Goodreads); Gen secretly wasn't impressed but didn't admit that until much later. Despite the mismatch, it started a habit of sharing the things they loved with each other that still runs strong today.
+                  They eventually finished the book. Daryl liked it (he gave it 4/5 on Goodreads); Gen secretly wasn&apos;t impressed but didn&apos;t admit that until much later. Despite the mismatch, it started a habit of sharing the things they loved with each other that still runs strong today.
                 </p>
               </div>
             </div>
@@ -214,8 +214,8 @@ export default function Home() {
           </h2>
           <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
             <p>
-              After that, the milestones came thick and fast. Meeting each other's friends, introducing Gen's cat to Daryl's dog, Gen's first ceilidh, travelling to Scotland, Stockholm, Copenhagen, Houston, and Paris, moving in together at Daryl's place, and then buying a house in the suburbs.
-              With each of these moments, their love grew stronger and deeper. They each made the other's life better in ways small and large.
+              After that, the milestones came thick and fast. Meeting each other&apos;s friends, introducing Gen&apos;s cat to Daryl&apos;s dog, Gen&apos;s first ceilidh, travelling to Scotland, Stockholm, Copenhagen, Houston, and Paris, moving in together at Daryl&apos;s place, and then buying a house in the suburbs.
+              With each of these moments, their love grew stronger and deeper. They each made the other&apos;s life better in ways small and large.
             </p>
           </div>
         </div>
@@ -263,10 +263,10 @@ export default function Home() {
                   Daryl had a plan. He was going to propose to Gen on a trip to Paris in May of 2025. However, a romantic weekend in France was not exactly subtle, and Gen began to suspect what was going on.
                 </p>
                 <p>
-                  To try and maintain some sense of surprise, he decided to change his plans: he would propose on their second anniversary, April 6th, 2025. After a dinner at the new Brazilian steakhouse, Gaucho, they would take a walk down by the harbour in the center of Helsinki, and there he'd pop the question.
+                  To try and maintain some sense of surprise, he decided to change his plans: he would propose on their second anniversary, April 6th, 2025. After a dinner at the new Brazilian steakhouse, Gaucho, they would take a walk down by the harbour in the center of Helsinki, and there he&apos;d pop the question.
                 </p>
                 <p>
-                  As they were waiting for the cab to the city, Gen was struck by an intrusive thought. She reached out and patted Daryl's jacket pocket, and felt the ring box. A little chagrined, Daryl still stuck to the original plan, and made Gen wait through dinner to see the ring and hear the all-important question. 
+                  As they were waiting for the cab to the city, Gen was struck by an intrusive thought. She reached out and patted Daryl&apos;s jacket pocket, and felt the ring box. A little chagrined, Daryl still stuck to the original plan, and made Gen wait through dinner to see the ring and hear the all-important question. 
                 </p>
                 <p>
                   On Rakkauden Silta, the Bridge of Love, right by the apartment Gen lived in when they first met, Daryl got down on one knee and proposed. Despite the lack of surprise, Gen said yes without hesitation.
