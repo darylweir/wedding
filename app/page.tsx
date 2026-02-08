@@ -260,7 +260,7 @@ export default function Home() {
               </h2>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Daryl had a plan. He was going to propose to Gen on a trip to Paris in May of 2025. However, a romantic weekend in Paris was not exactly subtle, and Gen began to suspect what was going on.
+                  Daryl had a plan. He was going to propose to Gen on a trip to Paris in May of 2025. However, a romantic weekend in France was not exactly subtle, and Gen began to suspect what was going on.
                 </p>
                 <p>
                   To try and maintain some sense of surprise, he decided to change his plans: he would propose on their second anniversary, April 6th, 2025. After a dinner at the new Brazilian steakhouse, Gaucho, they would take a walk down by the harbour in the center of Helsinki, and there he'd pop the question.

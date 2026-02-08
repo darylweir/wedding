@@ -40,10 +40,7 @@ export default function FAQPage() {
             Yes, children are welcome to join us in celebrating our wedding. Just make sure to include them in the RSVP.
           </p>
           <p className="mt-4">
-            We kindly ask that parents or guardians escort children out of the ceremony or reception if they become fussy or disruptive, so everyone can enjoy the moment. There's a play area on the grounds of the house for them to enjoy.
-          </p>
-          <p className="mt-4">
-            No on-site childcare will be organised during the event.
+            No on-site childcare will be organised during the event. We kindly ask that parents or guardians escort children out of the ceremony or reception if they become fussy or disruptive, so everyone can enjoy the moment. There's a play area on the grounds of the house for them to enjoy.
           </p>
           <p className="mt-4">
             Please note: the pool area at Logie is not monitored by a lifeguard, so please keep an eye on your children.
@@ -76,7 +73,7 @@ export default function FAQPage() {
     },
     {
       number: "04",
-      question: "Do we need to attend all wedding events?",
+      question: "Do I need to attend all of the wedding events?",
       answer: "No. We hope everyone can join for the ceremony and reception on Saturday, but all Friday and Sunday events are optional.",
     },
     {
@@ -101,7 +98,7 @@ export default function FAQPage() {
     {
       number: "07",
       question: "Is there transportation between events, or do we need to arrange our own?",
-      answer: "There's no need: everything happens on the Logie grounds. Transport from your accommodation to and from Logie is all you need to worry about.",
+      answer: "Everything happens on the Logie grounds. Transport from your accommodation to and from Logie is all you need to worry about.",
     },
     {
       number: "08",
