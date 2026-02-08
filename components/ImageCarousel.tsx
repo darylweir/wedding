@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 export type CarouselImageOrientation = "portrait" | "landscape";
@@ -31,6 +32,8 @@ export default function ImageCarousel({
 }: ImageCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [fullscreenIndex, setFullscreenIndex] = useState<number | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const goTo = useCallback(
     (index: number) => {
@@ -43,10 +46,48 @@ export default function ImageCarousel({
   const goPrev = useCallback(() => goTo(currentIndex - 1), [currentIndex, goTo]);
 
   useEffect(() => {
-    if (images.length <= 1 || isPaused) return;
+    if (images.length <= 1 || isPaused || fullscreenIndex !== null) return;
     const id = setInterval(() => goTo(currentIndex + 1), intervalMs);
     return () => clearInterval(id);
-  }, [currentIndex, isPaused, intervalMs, images.length, goTo]);
+  }, [currentIndex, isPaused, fullscreenIndex, intervalMs, images.length, goTo]);
+
+  const closeFullscreen = useCallback(() => {
+    setCurrentIndex((prev) => (fullscreenIndex !== null ? fullscreenIndex : prev));
+    setFullscreenIndex(null);
+  }, [fullscreenIndex]);
+
+  useEffect(() => {
+    if (fullscreenIndex === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeFullscreen();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [fullscreenIndex, closeFullscreen]);
+
+  useEffect(() => {
+    if (fullscreenIndex === null) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [fullscreenIndex]);
+
+  useEffect(() => {
+    if (fullscreenIndex !== null) closeButtonRef.current?.focus();
+  }, [fullscreenIndex]);
+
+  const fullscreenGoPrev = useCallback(() => {
+    setFullscreenIndex((i) =>
+      i === null ? null : (i - 1 + images.length) % images.length
+    );
+  }, [images.length]);
+  const fullscreenGoNext = useCallback(() => {
+    setFullscreenIndex((i) =>
+      i === null ? null : (i + 1) % images.length
+    );
+  }, [images.length]);
 
   const slideHeightVw = useMemo(
     () => (centerSlideWidth * 100 * 9) / 16,
@@ -75,6 +116,7 @@ export default function ImageCarousel({
   if (!images.length) return null;
 
   return (
+    <>
     <div
       className="relative w-full overflow-hidden bg-[#0f1419]"
       onMouseEnter={() => setIsPaused(true)}
@@ -101,22 +143,28 @@ export default function ImageCarousel({
               : slideHeightVw * PORTRAIT_ASPECT;
           return (
             <div
-            key={img.src}
-            className="relative flex-shrink-0 overflow-hidden rounded-lg"
-            style={{
-              width: `${widthVw}vw`,
-              height: `${slideHeightVw}vw`,
-            }}
-            aria-hidden={i !== currentIndex}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              fill
-              className="object-cover"
-              sizes={`${widthVw}vw`}
-              priority={i === 0}
-            />
+              key={img.src}
+              className="relative flex-shrink-0 overflow-hidden rounded-lg"
+              style={{
+                width: `${widthVw}vw`,
+                height: `${slideHeightVw}vw`,
+              }}
+              aria-hidden={i !== currentIndex}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes={`${widthVw}vw`}
+                priority={i === 0}
+              />
+              <button
+                type="button"
+                className="absolute inset-0 cursor-pointer border-0 bg-transparent p-0"
+                onClick={() => setFullscreenIndex(i)}
+                aria-label={`View ${img.alt} full screen`}
+              />
             </div>
           );
         })}
@@ -166,6 +214,76 @@ export default function ImageCarousel({
           </div>
         </>
       )}
+
+      {fullscreenIndex !== null &&
+        typeof document !== "undefined" &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex min-h-[100dvh] min-w-[100dvw] items-center justify-center bg-black/95"
+            style={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Full screen image"
+            onClick={closeFullscreen}
+          >
+            <div
+              className="relative flex h-full min-h-[100dvh] w-full min-w-[100dvw] items-center justify-center p-4"
+              style={{ width: "100vw", height: "100dvh", maxWidth: "100vw", maxHeight: "100dvh" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={images[fullscreenIndex].src}
+                alt={images[fullscreenIndex].alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+            <button
+              ref={closeButtonRef}
+              type="button"
+              onClick={closeFullscreen}
+              className="absolute right-4 top-4 z-10 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50"
+              aria-label="Close full screen"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            {images.length > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    fullscreenGoPrev();
+                  }}
+                  className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  aria-label="Previous image"
+                >
+                  <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    fullscreenGoNext();
+                  }}
+                  className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm hover:bg-white/30 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  aria-label="Next image"
+                >
+                  <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            )}
+          </div>,
+          document.body
+        )}
     </div>
+    </>
   );
 }
