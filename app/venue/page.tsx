@@ -28,13 +28,13 @@ export default function VenuePage() {
             <div>
               <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
                 <p>
-                  Nestled in the heart of Aberdeenshire, Logie Country House stands as a testament to Scottish heritage and elegance. Originally a fortified castle dating back to 1492, this historic estate has been lovingly restored and renovated in 2006, blending centuries of history with modern luxury.
+                  Our wedding will take place at Logie Country House, a beautiful manor home located on an estate dating back to the 15th century. It sits just outside the town of Inverurie in Aberdeenshire. Originally a fortified tower house, it grew into a large country home and later a hotel. It was largely destroyed in a fire in 1974, save for the old stone tower, and was restored to the venue you see today in the late 2000s.
                 </p>
                 <p>
-                  The estate offers an array of exceptional amenities for our wedding celebration. Guests can enjoy the indoor pool, relax in one of the seventeen beautifully appointed bedrooms, or gather in the two charming courtyards. For those seeking relaxation, two outdoor hot tubs provide the perfect escape, while the on-site cinema offers entertainment for all ages.
+                  We'll have exclusive use of the house and estate for the weekend, from 1pm on Friday til noon on Monday. Our guests will be able to enjoy all the amenities of the house and estate, including the indoor pool, two hot tubs, a home cinema, and more.
                 </p>
                 <p>
-                  One of the most delightful features of Logie Country House is the presence of tame Highland cows, adding a touch of authentic Scottish charm to the picturesque surroundings. This unique venue combines historic grandeur with modern comfort, creating the perfect setting for our special day.
+                  The estate is also home to a trio of Highland cows named Ophelia, Cecilia, and Ermintrude. They live just across the river at the bottom of the lawn, and guests are free to visit them and feed them treats, if they can be coaxed out of the shade of their favourite tree.
                 </p>
               </div>
             </div>
@@ -80,25 +80,22 @@ export default function VenuePage() {
           <div className="bg-[#2a3441] rounded-lg p-6 sm:p-8 space-y-4">
             <div className="space-y-4 text-white/90 text-base sm:text-lg leading-relaxed">
               <p>
-                Most parts of our wedding celebration will take place indoors, ensuring comfort regardless of the Scottish weather. The ceremony and reception will be held in the beautifully appointed indoor spaces of Logie Country House.
+                On the wedding day itself, all events will take place indoors, ensuring comfort regardless of the Scottish weather. The ceremony and evening reception will be held in the ballroom, while the drinks reception will take place in the main house.
               </p>
               <p>
                 However, the venue also boasts lovely outdoor spaces and grounds that guests are welcome to explore. The two charming courtyards provide perfect spots for mingling and enjoying the fresh air, and the estate grounds offer picturesque views of the surrounding countryside.
               </p>
               <p>
-                Whether you prefer to stay cozy indoors or venture outside to enjoy the natural beauty of Aberdeenshire, there will be spaces available for everyone to feel comfortable and enjoy the celebration.
-              </p>
-              <p>
-                There are stairs inside the house, but all of the event spaces are wheelchair accessible.
+                There are stairs inside the house, but all of the event spaces are wheelchair accessible. If you're staying overnight in the house, be prepared to haul your bags up some stairs. Gen promises to voluntell her brother to help out those who need it. 
               </p>
               <p>
                 Restrooms are available in the ballroom and manor house.
               </p>
               <p>
-                Smoking is only allowed outside.
+                Smoking is only allowed outside - please don't get us in trouble with the owners.
               </p>
               <p>
-                There are three Highland Cows living on the property, and you can go visit them if you like.
+                If you're curious about the facilities at Logie, check out their <a href="https://www.logiecountryhouse.co.uk/faqs/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline">FAQ</a>.
               </p>
             </div>
           </div>

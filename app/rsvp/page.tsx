@@ -22,7 +22,7 @@ export default function RSVPPage() {
               Thank you for your interest in RSVPing to our wedding!
             </p>
             <p>
-              Our top boffins (read: Daryl) are hard at work setting up the RSVP system. Please check back soon to confirm your attendance.
+              Our top boffins (read: Daryl) are hard at work setting up the RSVP system. Please check back after you receive the formal invitation later this year to confirm your attendance.
             </p>
           </div>
         </div>
